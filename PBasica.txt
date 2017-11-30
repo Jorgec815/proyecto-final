@@ -1,0 +1,28 @@
+int, char, float, string y boolean son:
+1) Funciones de acceso a datos 
+2) Instrucciones de acceso a datos 
+3) Tipos de datos *
+El número 1010 en binario se representa en decimal como
+1) 8 *
+2) 12 
+3) 16 
+if, else, for y while son
+1) Funciones de acceso a datos 
+2) Sentencias de control *
+3) Tipos de datos 
+¿Cuál es el código ASCII decimal de la letra A mayúscula?
+1) 32 
+2) 65 *
+3) 97 
+¿Qué significa EOF?
+1) Empty or full 
+2) End of file *
+3) End of floop 
+Imperativo, declarativo y orientado a objetos son
+1) Modos de compilar el código fuente de un programa de ordenador 
+2) Modos de definir el pseudocódigo de un programa de ordenador 
+3) Paradigmas de programación *
+¿Qué funciones debe de tener toda clase?
+1) Constructor 
+2) Destructor 
+3) Constructor y destructor *

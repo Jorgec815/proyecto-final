@@ -1,0 +1,28 @@
+¿Qué es un objeto en la programación orientada a objetos?
+1. Una objeto es la instancia de una clase.  *
+2. Una objeto es una sección de la memoria que contiene atributos.  	
+3. Una objeto es un programa que contiene un main.  	
+La sobre-escritura de métodos implica:
+1. Modificar el tipo de retorno de un método  	
+2. Ninguna de las opciónes  
+3. Modificar el comportamiento de un método heredado *
+¿Cuál de estas afirmaciones sobre una variable de objeto no es cierta?
+1. Una variable de objeto contiene un objeto.  *	
+2. Una variable de objeto puede contener la referencia null. 
+3. Una variable de objeto contiene la dirección en memoria de un objeto  	
+Un diseño que en un principio parece bueno y bien diseñado pude empezar a deteriorarse porque:
+1. No fue establecido dentro del paradigma orientado a objetos  	
+2. No se le dio la flexibilidad que permitiera su extensibilidad  *	
+3. Los diseños no se degradan, se degrada el software implementado  
+Si intentamos acceder a un método private desde otra clase:
+1. El programa transforma el método privado en publico automáticamente.  	
+2. El programa no compila. Se produce un error de compilación.  *	
+3. El programa compila (creando un .class) pero no se ejecuta.  
+No es posible en Java:
+1. polimorfismo  	
+2. herencia múltiple.  *	
+3. asociación.  
+¿Qué es una clase en la programación orientada a objetos?
+1. Una clase es un programa que no contiene métodos estaticos.  	
+2. Una clase es una sección de la memoria que contiene datos  	
+3. Una clase es la descripción de un tipo de objetos.  *

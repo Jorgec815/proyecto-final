@@ -1,0 +1,28 @@
+Son descripciones gráficas de algoritmos; usan símbolos conectados con flechas para indicar la secuencia de instrucciones y están regidos por ISO
+1. Diagramas de flujo *
+2. Storyboard
+3. Pseudocódigo
+Proceso de diseñar, codificar, depurar y mantener el código fuente de programas computacionales.
+1.Compilación
+2.Programación *
+3.Hardware
+Lenguaje formal diseñado para expresar procesos que pueden ser llevados a cabo por máquinas como las computadoras.
+1. Variables
+2. Storyboard
+3. Lenguaje de programación *
+Conjunto prescrito de instrucciones o reglas bien definidas, ordenadas y finitas que permite realizar una actividad mediante pasos sucesivos que no generen dudas a quien deba realizar dicha actividad.
+1. Ciclos
+2. Estructuras
+3. Algoritmo *
+Conjunto de líneas de texto que son las instrucciones que debe seguir la computadora para ejecutar dicho programa.
+1. Código fuente *
+2. Programador
+3. Informática
+Mezcla de lenguaje natural con algunas convenciones sintácticas propias de lenguajes de programación
+1. Diagramas de flujo
+2. Pseudocódigo *
+3. Variables
+Respecto a los constructores de una clase
+1) Su nombre coincide con el nombre de la clase 
+2) Pueden tener cualquier tipo y cualquier número de parámetros 
+3) Todas las respuestas son correctas *
