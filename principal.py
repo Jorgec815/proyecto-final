@@ -1,3 +1,4 @@
+#importe de las librerías necesarias
 import sys, pygame, util
 from time import *
 from pygame.locals import *
@@ -5,17 +6,21 @@ from dado import *
 from casilla import *
 from ficha import *
 
+#Dimensiones de la pantalla
 SCREEN_WITDTH = 1024
 SCREEN_HEIGHT = 768
 ICON_SIZE = 100
 
 def game():
+    #Inicialización de algunos métodos
     pygame.init()
     pygame.mixer.init()
     pygame.mouse.set_visible( True )
     screen = pygame.display.set_mode( (SCREEN_WITDTH,SCREEN_HEIGHT) )
     pygame.display.set_caption ( "Preguntas" )
-    background_image = util.cargar_imagen( "imagenes/fondo.png" )
+    background_image = util.cargar_imagen( "imagenes/tablero3.jpg" )
+
+    #creación de los objetos del juego
     dado = Dado(0)
     casilla = [Casilla((100,50), 'inicio'),Casilla((300,50), 'orientada'),
                Casilla((500,50), 'algoritmia'),Casilla((700,50), 'basica'),
@@ -35,6 +40,7 @@ def game():
                ]
     ficha = Ficha((10,10), 0)
 
+    #Estados para llevar un tiempo de ejecución
     jugando = False
     mover = False
     pregunta = False
@@ -42,6 +48,7 @@ def game():
     pos_actual = 0
     pos_siguiente = 0
 
+    #ejecución del juego
     while True:
 
         teclas = pygame.key.get_pressed()
@@ -50,11 +57,13 @@ def game():
             if event.type == pygame.QUIT:
                 sys.exit()
 
+        #Detecta si la tecla "d" fue pulsada para proceder a lanzar el dado
         if teclas[K_d]:
             print("La tecla del dado fue presionada")
             jugando = False
             mover = True
 
+        #Espacio se usa para reiniciar el juego
         if teclas[K_SPACE]:
             ficha.puntos = 0
             pos_actual = 0
@@ -64,11 +73,13 @@ def game():
             mover = False
             pregunta = False
 
+        #Juego activo
         if jugando:
             
-            
+
+            #Declaración del los texto que se imprimiran en pantalla
             fuente = pygame.font.Font(None,25)
-            puntos = fuente.render("Puntos" + str(ficha.puntos),1,(0,0,0))
+            puntos = fuente.render("Puntos" + str(ficha.puntos),1,(255,255,255))
 
             screen.blit(background_image, (0,0))
             screen.blit(dado.image, dado.rect)
@@ -85,7 +96,7 @@ def game():
             if (pos_siguiente == 30):
                 print("Game Over")
 
-
+            #"blit" de los objetos creados
             for n in casilla:
                 if (n.tipo == 'basica'):
                     n.image = n.imagenes[1]
@@ -104,10 +115,15 @@ def game():
                     screen.blit(n.image, n.rect)
 
             screen.blit(ficha.image, ficha.rect)
-            
+
+            #Actualiza la posición actual de la ficha
             pos_actual = pos_siguiente
 
+        
+        #Cuando se lanza el dado
         elif mover:
+
+            #Se le da un valor aleatorio al dado y se actualiza su imagen
 
             dado.valor = randint(1,6)
             dado.image = dado.imagenes[dado.valor]
@@ -120,19 +136,39 @@ def game():
             mover = False
             pregunta = False
             jugando = True
-            
+
+        #Si ningun estado se encuentra activo se imprimirá la pantalla de inicio  
         else:
 
             inicio_image = util.cargar_imagen('imagenes/inicio.jpg')
             spacebar_image = util.cargar_imagen('imagenes/spacebar.png')
+            c_image = util.cargar_imagen('imagenes/c++_grande.png')
+            java_image = util.cargar_imagen('imagenes/java_grande.png')
+            algoritmia_image = util.cargar_imagen('imagenes/algoritmia_grande.png')
 
             screen.blit(inicio_image, (0,0))
-            screen.blit(spacebar_image, (250,400))
+            screen.blit(spacebar_image, (250,250))
+            screen.blit(c_image, (150,500))
+            screen.blit(java_image, (450,500))
+            screen.blit(algoritmia_image, (750,500))
+            
 
             fuente = pygame.font.Font(None, 150)
             titulo_inicio = fuente.render("Preguntas",1,(0,0,0))
-            screen.blit(titulo_inicio, (250,250))
-
+            screen.blit(titulo_inicio, (250,100))
+            fuente = pygame.font.Font(None, 40)
+            c_inicio = fuente.render("Programación",1,(0,0,0))
+            c2_inicio = fuente.render("Básica",1,(0,0,0))
+            java_inicio = fuente.render("Orientada a",1,(0,0,0))
+            java2_inicio = fuente.render("Objetos",1,(0,0,0))
+            algoritmia_inicio = fuente.render("Algoritmia",1,(0,0,0))
+            screen.blit(c_inicio, (150,700))
+            screen.blit(c2_inicio, (150,725))
+            screen.blit(java_inicio, (450,700))
+            screen.blit(java2_inicio, (450,725))
+            screen.blit(algoritmia_inicio, (750,700))
+            
+        #Actualización de la pantalla
         pygame.display.update()
         pygame.time.delay(10)
 

@@ -12,7 +12,6 @@ class Ficha(Sprite):
 		self.image= util.cargar_imagen('imagenes/ficha1.png')
 		self.rect = self.image.get_rect()
 		self.rect.move_ip(coord[0], coord[1])
-        
 	def update(self, casilla):
 		if self.rect.x < casilla.rect.x:
 			self.rect.x = self.rect.x + 1

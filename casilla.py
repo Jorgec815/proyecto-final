@@ -9,7 +9,7 @@ from random import *
 class Casilla (Sprite):
     def __init__ (self, coord, tipo):
         Sprite.__init__(self)
-        self.imagenes = [util.cargar_imagen('imagenes/icono.png'),
+        self.imagenes = [util.cargar_imagen('imagenes/algoritmia_icono.png'),
                          util.cargar_imagen('imagenes/c++_icono.png'),
                          util.cargar_imagen('imagenes/java_icono.png'),
                          util.cargar_imagen('imagenes/algoritmia_icono.png'),
