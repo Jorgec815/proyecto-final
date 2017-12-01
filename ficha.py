@@ -6,12 +6,10 @@ from dado import *
 
 
 class Ficha(Sprite):
-	def __init__(self, coord,jugador):
+	def __init__(self, coord, puntos):
 		Sprite.__init__(self)
-		self.jugador = jugador
-		self.imagenes = [util.cargar_imagen('imagenes/ficha1.png'),
-                                 util.cargar_imagen('imagenes/ficha2.png')]
-		self.image = self.imagenes[0]
+		self.puntos = puntos
+		self.image= util.cargar_imagen('imagenes/ficha1.png')
 		self.rect = self.image.get_rect()
 		self.rect.move_ip(coord[0], coord[1])
         

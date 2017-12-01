@@ -6,8 +6,9 @@ import util
 from random import *
 
 class Dado():
-    def __init__(self):
-        self.imagenes = [util.cargar_imagen('imagenes/dado1.png'),
+    def __init__(self, valor):
+        self.imagenes = [util.cargar_imagen('imagenes/dado0.png'),
+                         util.cargar_imagen('imagenes/dado1.png'),
                          util.cargar_imagen('imagenes/dado2.png'),
                          util.cargar_imagen('imagenes/dado3.png'),
                          util.cargar_imagen('imagenes/dado4.png'),
@@ -16,9 +17,4 @@ class Dado():
         
         self.image = self.imagenes[0]
         self.rect = (975, 10)
-
-    def update(self):
-        
-        num = randint(0,5)
-        self.image = self.imagenes[num]
-        self.numero = num
+        self.valor = valor
