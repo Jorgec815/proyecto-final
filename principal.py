@@ -17,21 +17,21 @@ def game():
     pygame.display.set_caption ( "Preguntas" )
     background_image = util.cargar_imagen( "imagenes/fondo.png" )
     dado = Dado(0)
-    casilla = [Casilla((70,50), 'basica'),Casilla((140,50), 'orientada'),
-               Casilla((210,50), 'basica'),Casilla((280,50), 'orientada'),
-               Casilla((350,50), 'basica'),Casilla((420,50), 'orientada'),
-               Casilla((490,50), 'basica'),Casilla((560,50), 'orientada'),
-               Casilla((630,50), 'basica'),Casilla((700,50), 'orientada'),
-               Casilla((70,200), 'basica'),Casilla((140,200), 'orientada'),
-               Casilla((210,200), 'basica'),Casilla((280,200), 'orientada'),
-               Casilla((350,200), 'basica'),Casilla((420,200), 'orientada'),
-               Casilla((490,200), 'basica'),Casilla((560,200), 'orientada'),
-               Casilla((630,200), 'basica'),Casilla((700,200), 'orientada'),
-               Casilla((70,350), 'basica'),Casilla((140,350), 'orientada'),
-               Casilla((210,350), 'basica'),Casilla((280,350), 'orientada'),
-               Casilla((350,350), 'basica'),Casilla((420,350), 'orientada'),
-               Casilla((490,350), 'basica'),Casilla((560,350), 'orientada'),
-               Casilla((630,350), 'basica'),Casilla((700,350), 'orientada')
+    casilla = [Casilla((100,50), 'inicio'),Casilla((300,50), 'orientada'),
+               Casilla((500,50), 'algoritmia'),Casilla((700,50), 'basica'),
+               Casilla((900,50), 'orientada'),Casilla((900,175), 'algoritmia'),
+               Casilla((700,175), 'basica'),Casilla((500,175), 'orientada'),
+               Casilla((300,175), 'algoritmia'),Casilla((100,175), 'basica'),
+               Casilla((100,300), 'orientada'),Casilla((300,300), 'algoritmia'),
+               Casilla((500,300), 'basica'),Casilla((700,300), 'orientada'),
+               Casilla((900,300), 'algoritmia'),Casilla((900,425), 'basica'),
+               Casilla((700,425), 'orientada'),Casilla((500,425), 'algoritmia'),
+               Casilla((300,425), 'basica'),Casilla((100,425), 'orientada'),
+               Casilla((100,550), 'algoritmia'),Casilla((300,550), 'basica'),
+               Casilla((500,550), 'orientada'),Casilla((700,550), 'algoritmia'),
+               Casilla((900,550), 'basica'),Casilla((900,675), 'orientada'),
+               Casilla((700,675), 'algoritmia'),Casilla((500,675), 'basica'),
+               Casilla((300,675), 'orientada'),Casilla((100,675), 'final')
                ]
     ficha = Ficha((10,10), 0)
 
@@ -78,22 +78,34 @@ def game():
             while(pos_siguiente >= 30):
                 pos_siguiente -= 1
 
+
             ficha.update(casilla[pos_siguiente])
+            
 
             if (pos_siguiente == 30):
                 print("Game Over")
 
-            pos_actual = pos_siguiente
 
             for n in casilla:
                 if (n.tipo == 'basica'):
                     n.image = n.imagenes[1]
                     screen.blit(n.image , n.rect)
-                    n.update()
                 elif(n.tipo == 'orientada'):
                     n.image = n.imagenes[2]
                     screen.blit(n.image , n.rect)
-                    n.update()
+                elif(n.tipo == 'algoritmia'):
+                    n.image = n.imagenes[3]
+                    screen.blit(n.image, n.rect)
+                elif(n.tipo == 'final'):
+                    n.image = n.imagenes[4]
+                    screen.blit(n.image, n.rect)
+                elif(n.tipo == 'inicio'):
+                    n.image = n.imagenes[5]
+                    screen.blit(n.image, n.rect)
+
+            screen.blit(ficha.image, ficha.rect)
+            
+            pos_actual = pos_siguiente
 
         elif mover:
 
@@ -106,10 +118,9 @@ def game():
             pos_siguiente = pos_actual + dado.valor
 
             mover = False
-            pregunta = True
-
+            pregunta = False
             jugando = True
-
+            
         else:
 
             inicio_image = util.cargar_imagen('imagenes/inicio.jpg')
